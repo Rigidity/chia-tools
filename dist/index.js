@@ -215,14 +215,14 @@ exports.decodeString = decodeString;
 function addressInfo(address) {
     var result = bech32_1.bech32m.decode(address);
     return {
-        hash: toHex(convertBits(Uint8Array.from(result.words), 5, 8, false)),
+        hash: formatHex(toHex(convertBits(Uint8Array.from(result.words), 5, 8, false))),
         address: address,
         prefix: result.prefix
     };
 }
 exports.addressInfo = addressInfo;
 function hashInfo(puzzleHash, prefix) {
-    var result = bech32_1.bech32m.encode(prefix, convertBits(toBytes(puzzleHash), 8, 5, true));
+    var result = bech32_1.bech32m.encode(prefix, convertBits(toBytes(stripHex(puzzleHash)), 8, 5, true));
     return {
         hash: puzzleHash,
         address: result,

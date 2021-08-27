@@ -104,7 +104,9 @@ export function decodeString(array: Uint8Array): string {
 export function addressInfo(address: string): AddressInfo {
     const result = bech32m.decode(address);
     return {
-        hash: toHex(convertBits(Uint8Array.from(result.words), 5, 8, false)),
+        hash: formatHex(
+            toHex(convertBits(Uint8Array.from(result.words), 5, 8, false))
+        ),
         address,
         prefix: result.prefix,
     };
@@ -113,7 +115,7 @@ export function addressInfo(address: string): AddressInfo {
 export function hashInfo(puzzleHash: string, prefix: string): AddressInfo {
     const result = bech32m.encode(
         prefix,
-        convertBits(toBytes(puzzleHash), 8, 5, true)
+        convertBits(toBytes(stripHex(puzzleHash)), 8, 5, true)
     );
     return {
         hash: puzzleHash,
