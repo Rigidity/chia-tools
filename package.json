@@ -1,8 +1,9 @@
 {
     "name": "chia-tools",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A set of utilities for the Chia Network, written in TypeScript.",
     "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
     "repository": "https://github.com/Rigidity/chia-utils.git",
     "author": "Rigidity <me@rigidnetwork.com>",
     "license": "MIT",
