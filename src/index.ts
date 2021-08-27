@@ -74,6 +74,10 @@ export async function toSignature(bytes: Uint8Array): Promise<G2Element> {
     return bls.G2Element.from_bytes(bytes);
 }
 
+export function stringify(data: PrivateKey | G1Element | G2Element) {
+    return toHex(data.serialize());
+}
+
 export interface AddressInfo {
     address: string;
     hash: string;
@@ -106,7 +110,7 @@ export function addressInfo(address: string): AddressInfo {
     };
 }
 
-export function hashToAddress(puzzleHash: string, prefix: string): AddressInfo {
+export function hashInfo(puzzleHash: string, prefix: string): AddressInfo {
     const result = bech32m.encode(
         prefix,
         convertBits(toBytes(puzzleHash), 8, 5, true)

@@ -1,19 +1,19 @@
 {
-  "name": "chia-tools",
-  "version": "1.0.0",
-  "description": "A set of utilities for the Chia Network, written in TypeScript.",
-  "main": "dist/index.js",
-  "repository": "https://github.com/Rigidity/chia-utils.git",
-  "author": "Rigidity <me@rigidnetwork.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/bech32": "^1.1.4",
-    "@types/bip32": "^2.0.0",
-    "@types/node": "^16.7.1"
-  },
-  "dependencies": {
-    "@chiamine/bls-signatures": "^0.2.1-beta.2",
-    "bech32": "^2.0.0",
-    "bip39": "^3.0.4"
-  }
+    "name": "chia-tools",
+    "version": "1.0.1",
+    "description": "A set of utilities for the Chia Network, written in TypeScript.",
+    "main": "dist/index.js",
+    "repository": "https://github.com/Rigidity/chia-utils.git",
+    "author": "Rigidity <me@rigidnetwork.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/bech32": "^1.1.4",
+        "@types/bip32": "^2.0.0",
+        "@types/node": "^16.7.1"
+    },
+    "dependencies": {
+        "@chiamine/bls-signatures": "^0.2.1-beta.2",
+        "bech32": "^2.0.0",
+        "bip39": "^3.0.4"
+    }
 }
