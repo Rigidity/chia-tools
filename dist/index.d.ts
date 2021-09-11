@@ -32,3 +32,6 @@ export declare function validHash(hash: string): boolean;
 export declare function concatBytes(...byteLists: Uint8Array[]): Uint8Array;
 export declare function toCoinId(parent: Uint8Array, puzzle: Uint8Array, amount: Uint8Array): Uint8Array;
 export declare function encodeNumber(value: number): Uint8Array;
+export declare function decodeNumber(value: Uint8Array): number;
+export declare function encodeBigInt(number: bigint): Uint8Array;
+export declare function decodeBigInt(bytes: Uint8Array): bigint;

@@ -9,6 +9,8 @@
         "noImplicitThis": true,
         "noFallthroughCasesInSwitch": true,
         "outDir": "dist",
+        "target": "ESNext",
+        "module": "CommonJS",
         "sourceMap": true,
         "skipLibCheck": true,
         "strict": true

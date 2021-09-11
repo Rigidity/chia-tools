@@ -1,6 +1,6 @@
 {
     "name": "chia-tools",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "A set of utilities for the Chia Network, written in TypeScript.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",

@@ -161,7 +161,7 @@ export function toBytes(hex: string): Uint8Array {
 }
 
 export function formatHex(hex: string): string {
-    return '0x' + hex;
+    return hex.startsWith('0x') ? hex : '0x' + hex;
 }
 
 export function stripHex(hex: string): string {
@@ -200,4 +200,27 @@ export function encodeNumber(value: number): Uint8Array {
     let hex = value.toString(16);
     if (hex.length % 2 !== 0) hex = `0${hex}`;
     return toBytes(hex);
+}
+
+export function decodeNumber(value: Uint8Array): number {
+    return parseInt(toHex(value), 16);
+}
+
+export function encodeBigInt(number: bigint): Uint8Array {
+    let hex = number.toString(16);
+    if (hex.length % 2) hex = '0' + hex;
+    const length = hex.length / 2;
+    const bytes = new Uint8Array(length);
+    let i = 0;
+    let j = 0;
+    while (i < length) {
+        bytes[i] = parseInt(hex.slice(j, j + 2), 16);
+        i += 1;
+        j += 2;
+    }
+    return bytes;
+}
+
+export function decodeBigInt(bytes: Uint8Array): bigint {
+    return BigInt(`0x${toHex(bytes)}`);
 }
