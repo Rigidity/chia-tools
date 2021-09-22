@@ -3,8 +3,8 @@ import { bytesToString, stringToBytes } from 'bytes.ts';
 import blsPromise from '../../utils/bls';
 
 export class Signature {
-    public signature: G2Element;
-    public bls: ModuleInstance;
+    public readonly signature: G2Element;
+    public readonly bls: ModuleInstance;
 
     public static async from(
         source: Buffer | string | Buffer[] | string[] | Signature[]

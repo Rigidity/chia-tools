@@ -4,8 +4,8 @@ import blsPromise from '../../utils/bls';
 import { Signature } from './Signature';
 
 export class PublicKey {
-    public publicKey: G1Element;
-    public bls: ModuleInstance;
+    public readonly publicKey: G1Element;
+    public readonly bls: ModuleInstance;
 
     public static async from(source: Buffer | string): Promise<PublicKey> {
         const bls = await blsPromise;

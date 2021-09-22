@@ -3,11 +3,11 @@ import { bytesToString, concatBytes, intToBytes } from 'bytes.ts';
 import { createHash } from 'crypto';
 import { formatHex, stripHex } from '../..';
 import { convertBits } from '../../utils/bech';
-import { Coin } from '../data/Coin';
+import { Coin } from '../chia/Coin';
 import { Address } from './Address';
 
 export class Hash {
-    public bytes: Buffer;
+    public readonly bytes: Buffer;
 
     public static coin(coin: Coin): Hash {
         return Hash.generate(

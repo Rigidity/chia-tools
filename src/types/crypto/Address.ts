@@ -4,8 +4,8 @@ import { convertBits } from '../../utils/bech';
 import { Hash } from './Hash';
 
 export class Address {
-    public prefix: string;
-    public bytes: Buffer;
+    public readonly prefix: string;
+    public readonly bytes: Buffer;
 
     constructor(address: string) {
         const result = bech32m.decode(address);

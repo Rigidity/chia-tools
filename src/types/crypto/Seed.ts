@@ -5,8 +5,8 @@ import blsPromise from '../../utils/bls';
 import { PrivateKey } from './PrivateKey';
 
 export class Seed {
-    public seed: Buffer;
-    public bls: ModuleInstance;
+    public readonly seed: Buffer;
+    public readonly bls: ModuleInstance;
 
     public static mnemonic(): string {
         return generateMnemonic();

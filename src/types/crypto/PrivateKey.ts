@@ -8,8 +8,8 @@ import { PublicKey } from './PublicKey';
 import { Signature } from './Signature';
 
 export class PrivateKey {
-    public privateKey: BasePrivateKey;
-    public bls: ModuleInstance;
+    public readonly privateKey: BasePrivateKey;
+    public readonly bls: ModuleInstance;
 
     public static async from(source: Buffer | string): Promise<PrivateKey> {
         const bls = await blsPromise;
