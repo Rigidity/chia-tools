@@ -9,9 +9,9 @@
         "noImplicitThis": true,
         "noFallthroughCasesInSwitch": true,
         "outDir": "dist",
-        "target": "ESNext",
+        "target": "ES5",
         "module": "CommonJS",
-        "sourceMap": true,
+        "inlineSourceMap": true,
         "skipLibCheck": true,
         "strict": true
     },

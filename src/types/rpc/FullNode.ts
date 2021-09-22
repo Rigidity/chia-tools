@@ -1,6 +1,5 @@
 import path from 'path';
-import { rootPath } from '../..';
-import { config } from '../../utils/chia';
+import { config, rootPath } from '../../utils/chia';
 import { BlockRecord } from '../chia/BlockRecord';
 import { CoinRecord } from '../chia/CoinRecord';
 import { CoinSpend } from '../chia/CoinSpend';
