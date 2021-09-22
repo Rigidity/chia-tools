@@ -1,3 +1,5 @@
+import path from 'path';
+import { rootPath } from '../..';
 import { config } from '../../utils/chia';
 import { BlockRecord } from '../chia/BlockRecord';
 import { CoinRecord } from '../chia/CoinRecord';
@@ -15,9 +17,9 @@ export const fullNodeDefaults: ClientOptions = {
     protocol: 'https',
     host: config.self_hostname,
     port: config.full_node.rpc_port,
-    caCertPath: config.private_ssl_ca.crt,
-    certPath: config.daemon_ssl.private_crt,
-    keyPath: config.daemon_ssl.private_key,
+    caCertPath: path.join(rootPath, config.private_ssl_ca.crt),
+    certPath: path.join(rootPath, config.daemon_ssl.private_crt),
+    keyPath: path.join(rootPath, config.daemon_ssl.private_key),
 };
 
 export interface GetInitialFreezePeriod {
