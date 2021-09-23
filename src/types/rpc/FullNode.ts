@@ -276,7 +276,7 @@ export class FullNode extends Client {
         puzzleHash: string,
         startHeight?: number,
         endHeight?: number,
-        includeSpentCoins?: number
+        includeSpentCoins?: boolean
     ): Promise<Response<GetCoinRecordsByPuzzleHash>> {
         return await this.request<GetCoinRecordsByPuzzleHash>(
             'get_coin_records_by_puzzle_hash',
@@ -293,7 +293,7 @@ export class FullNode extends Client {
         puzzleHashes: string[],
         startHeight?: number,
         endHeight?: number,
-        includeSpentCoins?: number
+        includeSpentCoins?: boolean
     ): Promise<Response<GetCoinRecordsByPuzzleHashes>> {
         return await this.request<GetCoinRecordsByPuzzleHashes>(
             'get_coin_records_by_puzzle_hashes',
