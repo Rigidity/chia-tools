@@ -1,5 +1,3 @@
-import path from 'path';
-import { config, rootPath } from '../../utils/chia';
 import { BlockRecord } from '../chia/BlockRecord';
 import { CoinRecord } from '../chia/CoinRecord';
 import { CoinSpend } from '../chia/CoinSpend';
@@ -9,17 +7,8 @@ import { MempoolItem } from '../chia/MempoolItem';
 import { SignagePoint } from '../chia/SignagePoint';
 import { SpendBundle } from '../chia/SpendBundle';
 import { UnfinishedBlockHeader } from '../chia/UnfinishedBlockHeader';
-import { Client, ClientOptions } from './Client';
+import { Client } from './Client';
 import { Response } from './Response';
-
-export const fullNodeDefaults: ClientOptions = {
-    protocol: 'https',
-    host: config.self_hostname,
-    port: config.full_node.rpc_port,
-    caCertPath: path.join(rootPath, config.private_ssl_ca.crt),
-    certPath: path.join(rootPath, config.daemon_ssl.private_crt),
-    keyPath: path.join(rootPath, config.daemon_ssl.private_key),
-};
 
 export interface GetInitialFreezePeriod {
     INITIAL_FREEZE_END_TIMESTAMP: 1620061200;
@@ -154,10 +143,6 @@ export interface GetMempoolItemByTxId {
 }
 
 export class FullNode extends Client {
-    constructor(options: Partial<ClientOptions> = {}) {
-        super({ ...fullNodeDefaults, ...options });
-    }
-
     /**
      * @deprecated For backwards compatibility.
      */

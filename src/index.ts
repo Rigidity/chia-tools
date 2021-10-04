@@ -37,6 +37,7 @@ export * from './types/crypto/Seed';
 export * from './types/crypto/Signature';
 export * from './types/rpc/Client';
 export * from './types/rpc/FullNode';
+export * from './types/rpc/Harvester';
 export * from './types/rpc/Response';
 export * from './utils/bech';
 export * from './utils/bls';

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { readFileSync } from 'fs';
+import fs from 'fs';
 import { Agent } from 'https';
 import { Response } from './Response';
 
@@ -22,10 +22,10 @@ export class Client {
         this.options = options;
         this.agent = new Agent({
             ...(typeof options.caCertPath !== 'boolean'
-                ? { ca: readFileSync(options.caCertPath) }
+                ? { ca: fs.readFileSync(options.caCertPath) }
                 : {}),
-            cert: readFileSync(options.certPath),
-            key: readFileSync(options.keyPath),
+            cert: fs.readFileSync(options.certPath),
+            key: fs.readFileSync(options.keyPath),
             rejectUnauthorized: options.host !== 'localhost',
         });
     }
