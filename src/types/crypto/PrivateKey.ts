@@ -45,6 +45,10 @@ export class PrivateKey {
         );
     }
 
+    public delete() {
+        this.privateKey.delete();
+    }
+
     public toString(): string {
         return bytesToString(Buffer.from(this.privateKey.serialize()), 'hex');
     }

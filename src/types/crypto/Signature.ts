@@ -41,6 +41,10 @@ export class Signature {
         this.bls = bls;
     }
 
+    public delete() {
+        this.signature.delete();
+    }
+
     public toString(): string {
         return bytesToString(Buffer.from(this.signature.serialize()), 'hex');
     }

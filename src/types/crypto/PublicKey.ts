@@ -32,6 +32,10 @@ export class PublicKey {
         this.bls = bls;
     }
 
+    public delete() {
+        this.publicKey.delete();
+    }
+
     public toString(): string {
         return bytesToString(Buffer.from(this.publicKey.serialize()), 'hex');
     }
