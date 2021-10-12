@@ -42,4 +42,5 @@ export * from './types/rpc/Response';
 export * from './utils/bech';
 export * from './utils/bls';
 export * from './utils/chia';
+export * from './utils/convert';
 export * from './utils/hex';

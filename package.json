@@ -1,6 +1,6 @@
 {
     "name": "chia-tools",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "description": "A set of utilities for the Chia Network, written in TypeScript.",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -19,6 +19,7 @@
         "@chiamine/bls-signatures": "^0.2.1-beta.2",
         "axios": "^0.21.4",
         "bech32": "^2.0.0",
+        "bigint-buffer": "^1.1.5",
         "bip39": "^3.0.4",
         "bytes.ts": "^1.0.3",
         "yaml": "^1.10.2"

@@ -1,8 +1,9 @@
 import { bech32m } from 'bech32';
-import { bytesToString, concatBytes, intToBytes } from 'bytes.ts';
+import { bytesToString, concatBytes } from 'bytes.ts';
 import { createHash } from 'crypto';
 import { formatHex, stripHex } from '../..';
 import { convertBits } from '../../utils/bech';
+import { intToBytesCLVM } from '../../utils/convert';
 import { Coin } from '../chia/Coin';
 import { Address } from './Address';
 
@@ -14,7 +15,7 @@ export class Hash {
             concatBytes(
                 new Hash(coin.parent_coin_info).bytes,
                 new Hash(coin.puzzle_hash).bytes,
-                intToBytes(BigInt(coin.amount), 'big')
+                intToBytesCLVM(BigInt(coin.amount))
             )
         );
     }
